@@ -1,0 +1,14 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="1000" height="1000">
+	<title>PokeBola-svg</title>
+	<style>
+		.s0 { fill: #000000 } 
+		.s1 { fill: #ffffff } 
+		.s2 { fill: #ff0000 } 
+	</style>
+	<path id="Forma 4" class="s0" d="m50 100c-27.6 0-50-22.3-50-50 0-27.7 22.4-50 50-50 27.7 0 50 22.3 50 50 0 27.7-22.3 50-50 50z"/>
+	<path id="Forma 5 copy" class="s1" d="m50 95c-24.9 0-45-20.1-45-45 0-24.9 20.1-45 45-45 24.9 0 45 20.1 45 45 0 24.9-20.1 45-45 45z"/>
+	<path id="Forma 5" fill-rule="evenodd" class="s2" d="m50 5c24.6 0 44.5 19.6 45 44h-90c0.5-24.4 20.4-44 45-44z"/>
+	<path id="Forma 6" class="s0" d="m3 46h94v8h-94z"/>
+	<path id="Forma 8" class="s0" d="m50 65c-8.3 0-15-6.7-15-15 0-8.3 6.7-15 15-15 8.3 0 15 6.7 15 15 0 8.3-6.7 15-15 15z"/>
+	<path id="Forma 7" class="s1" d="m50 60c-5.5 0-10-4.5-10-10 0-5.5 4.5-10 10-10 5.5 0 10 4.5 10 10 0 5.5-4.5 10-10 10z"/>
+</svg>

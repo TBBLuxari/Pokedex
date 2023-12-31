@@ -1,0 +1,11 @@
+#app
+{
+    background-color: rgb(255, 0, 162);
+}
+html ,body ,#app
+{
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
