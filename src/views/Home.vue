@@ -18,7 +18,7 @@ let titulo="Home";
 function irAHome(){router.push({ name: 'Home' });};
 function determinarClase(id){return id < 650 ? 'sprite' : 'sprite-2';}
 function ponerNombre(id){return names[id].charAt(0).toUpperCase()+names[id].slice(1);}
-function ponerNombre2(id){return names[id].length>12 ? 'nombrePokemon-2':'nombrePokemon';}
+function ponerNombre2(id){return names[id].length> 8 ? 'nombrePokemon-2':'nombrePokemon';}
 
 function TraerDatos() 
 {
@@ -110,18 +110,28 @@ function Busqueda(nombre)
 
 <!-- Pokebola -->
 
-<div v-if="imagenCargada" class="container">
-  <div class="row">
-    <div v-for="(sprite, index) in sprites" :key="index" class="col-5 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-      <PokemonCard :sprite="sprite" :index="index" :determinarClase="determinarClase" :ponerNombre="ponerNombre" :ponerNombre2="ponerNombre2" :Busqueda="Busqueda" />
-    </div>
-  </div>
+<div v-if="imagenCargada" class="Container">
+  <PokemonCard 
+  v-for="(sprite, index) in sprites" :key="index"  
+  :sprite="sprite" 
+  :index="index" 
+  :determinarClase="determinarClase" 
+  :ponerNombre="ponerNombre" :ponerNombre2="ponerNombre2" :Busqueda="Busqueda" />
 </div>
 
 </template>
 
 
 <style scoped>
+.Container
+{
+ /*background-color: blue;*/
+  margin: 3.8em 1em 1em 1em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
 </style>
 

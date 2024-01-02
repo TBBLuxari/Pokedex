@@ -12,17 +12,23 @@ const props = defineProps({
   
 <template>
   <div class="card">
+
     <div class="PokebolaBG" @click="Busqueda(ponerNombre(index+1))"></div>
+
     <div class="center">
+
       <span class="numeroPokemon">Nº{{ index+1 }}</span>
       <img :src="sprite" :class="determinarClase(index+1)">
-      <h3 :class="ponerNombre2(index+1)">{{ponerNombre(index+1)}}</h3>
+      <h3 :class="ponerNombre2(index+1)">{{ponerNombre(index+1)}}</h3> 
+
     </div>
+
   </div>
 </template>
 
 
 <style scoped>
+
  @keyframes girar 
 {
   from {rotate: 0deg;}
@@ -32,28 +38,24 @@ const props = defineProps({
 .card
 {
   display: flex;
-
-  width: 12em;
-  height: 12em;
-  
-  align-items: center; 
-  justify-content: space-around;
+  width: 8em;
+  height: 8em;
   border: none;
-
-  border-radius: 10em; 
-  margin: 1em 0.5em 1em 0.5em;
-  transition: opacity 0.7s; 
- 
+  border-radius: 10em;
+  margin: 1em 0em 0em 0em;
+  transition: opacity 0.7s;
+  /*background-color: rgb(12, 255, 146);*/
+  justify-content: flex-start;
+  align-items: center;
 }
 .PokebolaBG
 {
-  background-color: green;
-  width: 12em;
-  height: 12em;
+  width: 8em;
+  height: 8em;
   position: absolute;
 
   background-image: url('../assets/PokeBola.svg');
-  background-size: 12em;
+  background-size: 8em;
   background-position: center;
 
   border-radius: 10em; 
@@ -76,6 +78,8 @@ const props = defineProps({
   height: 58.3%; 
   z-index: 1;
   pointer-events: none;
+  margin-top: 0.3em;
+  /*background-color: chartreuse;*/
 }
 .numeroPokemon
 {
@@ -83,9 +87,10 @@ const props = defineProps({
   font-size:small;
   font-weight:700;
 
-  margin: -2em 0em 0em 0em;
+  margin: 0em 0em 0em 0em;
 
   color: rgb(255, 255, 255);
+  /*background-color: black;*/
 }
 .sprite
 {
@@ -105,17 +110,13 @@ const props = defineProps({
 .nombrePokemon
 {
   font-family: 'Roboto', sans-serif;
-  font-size:1em;
-  position:absolute;
-  margin-top: 7.1em;
-  font-weight: 600;
+  font-size:small;
+  margin-top: 1.2em;
 }
 .nombrePokemon-2
 {
   font-family: 'Roboto', sans-serif;
-  font-size:0.7em;
-  position:absolute;
-  margin-top: 10em;
-  font-weight: 600;
+  font-size:x-small;
+  margin-top: 2em;
 }
 </style>

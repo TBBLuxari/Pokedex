@@ -60,14 +60,14 @@ const buscarPokemon = () =>
 </script>
 
 <template>
-  <nav class="navbar navbar-expand-lg custom-navbar ">
+  <nav class="navbar navbar-expand-lg custom-navbar fixed-top ">
     <div class="container-fluid navbar-container">
-        <a class="navbar-brand" href="#" @click="props.Ir">
+        <a class="navbar-brand tbb" href="#" @click="props.Ir">
             <img :src="PokeBall" class="img-logo">
             TBBLuxari
         </a>
         <div class="flex-grow-1 text-center titulo-container">
-            <span class="navbar-text titulo-navbar">{{ CortarGuion(props.Titulo.toLocaleLowerCase()) }}</span>
+            <span class="navbar-text titulo-navbar" >{{ CortarGuion(props.Titulo.toLocaleLowerCase()) }}</span>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -113,10 +113,16 @@ const buscarPokemon = () =>
 }
 .titulo-navbar
 {
-    font-size: xx-large;
-    font-weight: bold;
-    color: black;
-    text-transform: capitalize;
+  font-size:larger;
+  font-weight: 600;
+  color: black;
+  text-transform: capitalize;
+}
+.tbb
+{
+  font-size:medium;
+  color: #ffffff;
+  font-family:'Arial Narrow';
 }
 
 .custom-search-btn 
@@ -131,7 +137,7 @@ const buscarPokemon = () =>
 }
 .img-logo
 {
-  width: 3em;
-  height: 3em;
+  width: 2em;
+  height: 2em; 
 }
 </style>
