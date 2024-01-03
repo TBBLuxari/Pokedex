@@ -362,89 +362,6 @@ async function Awake()
 
 }
 
-
-// function processEvolutionChain(chain, evolutionPath, promises) 
-// {  
-//   let speciesName;
-//   speciesName = chain.species.name; 
-
-//   // Crea un nuevo objeto para la evolución
-//   let evolucion = 
-//   {
-//     nombre: speciesName,
-//     sprite: 'url_de_imagen_de_carga', 
-//     condiciones: [],
-//     evoluciona_a:0
-//   };
-//   //Traer los sprites
-//   if (!datos.value.Evoluciones.some(e => e.nombre === speciesName)) 
-//   {
-//     datos.value.Evoluciones.push(evolucion);
-//     if (busquedas == 0 && exceptions2[speciesName])
-//     {
-//       promises.push(getSprite(exceptions2[speciesName]).then(sprite => {
-//         evolucion.sprite = sprite;
-//         // Reemplaza el objeto antiguo con uno nuevo
-//         datos.value.Evoluciones.splice(
-//           datos.value.Evoluciones.findIndex(e => e.nombre === evolucion.nombre),
-//           1,
-//           {...evolucion}
-//         );
-//       }));
-//     }
-//     else
-//     {
-//       promises.push(getSprite(speciesName).then(sprite => {
-//         evolucion.sprite = sprite;
-//         // Reemplaza el objeto antiguo con uno nuevo
-//         datos.value.Evoluciones.splice(
-//           datos.value.Evoluciones.findIndex(e => e.nombre === evolucion.nombre),
-//           1,
-//           {...evolucion}
-//         );
-//       }));
-//     }
-//   }
-//   //Traer datos de evolucion
-
-//   if (chain.evolves_to.length > 0) 
-//   {
-//     for (let i = 0; i < chain.evolves_to.length; i++) 
-//     {
-//       const evolvesTo = chain.evolves_to[i];
-//       const evolutionDetails = evolvesTo.evolution_details[0];
-
-//       // Creamos un objeto para guardar todas las condiciones de evolución
-//       let condicionesEvolucion = {};
-
-//       // Para cada condición de evolución, si existe, la añadimos al objeto
-//       if (evolutionDetails.trigger.name) {condicionesEvolucion.triggerName = evolutionDetails.trigger.name; }
-//       if (evolutionDetails.min_level) {condicionesEvolucion.minLevel = evolutionDetails.min_level;}
-//       if (evolutionDetails.item && evolutionDetails.item.name) {condicionesEvolucion.itemName = evolutionDetails.item.name;}
-//       if (evolutionDetails.held_item && evolutionDetails.held_item.name) {condicionesEvolucion.heldItemName = evolutionDetails.held_item.name;}
-//       if (evolutionDetails.gender) {condicionesEvolucion.gender = evolutionDetails.gender;}
-//       if (evolutionDetails.known_move && evolutionDetails.known_move.name) {condicionesEvolucion.knownMove = evolutionDetails.known_move.name;}
-//       if (evolutionDetails.min_beauty) {condicionesEvolucion.minBeauty = evolutionDetails.min_beauty;}
-//       if (evolutionDetails.time_of_day) {condicionesEvolucion.timeOfDay = evolutionDetails.time_of_day;}
-//       if (evolutionDetails.min_happiness) {condicionesEvolucion.minHappiness = evolutionDetails.min_happiness;}
-
-//       // Añadimos el objeto a CondicinesDeEvolucion
-//       evolucion.evoluciona_a +=1;
-//       evolucion.condiciones.push(condicionesEvolucion);
-
-//       processEvolutionChain(evolvesTo, evolutionPath.slice(),promises);      
-
-//     }
-//     busquedas += 1;
-//   } 
-//   else 
-//   { 
-//     evolucion.evoluciona_a += 0;
-//     //console.log(`${speciesName} Forma fina de evolucion`);
-//   }
-
-// }
-
 function processEvolutionChain(chain, evolutionPath = [], promises) 
 {  
   let speciesName = chain.species.name; 
@@ -573,27 +490,24 @@ Start();
       <div v-for="tipo in datos.Tipos" :key="tipo.name" :class="['Tipo', tipo.class]">{{ tipo.name }}</div>
     </div>
 
-    <div class="CadenaEvolutiva">
-      <Evolucion v-for="evolucion in datos.Evoluciones" :key="evolucion.Nombre" :evolucion="evolucion" />
+    <div class="CadenaEvolutiva" >  
+      <Evolucion v-for="evolucion in datos.Evoluciones" :key="evolucion.Nombre" :evolucion="evolucion"/>
     </div>
 
+    
     <div class="Descripcion">
-  
       <div class="Texto">{{ datos.DescripcionTexto }}</div>
-      <div class="Stats">
-          <span>PS {{ datos.Stats[0] }}</span><br>
-          <span>ATK {{ datos.Stats[1] }}</span> <br>
-          <span>DF {{ datos.Stats[2] }}</span><br>
-          <span>ATKSP {{ datos.Stats[3] }}</span><br>
-          <span>DefSP {{ datos.Stats[4] }}</span><br>
-          <span>Speed {{ datos.Stats[5] }}</span>
-      </div>
-
+      <div class="PS">PS {{ datos.Stats[0] }}</div>
+      <div class="ATK">ATK {{ datos.Stats[1] }}</div>
+      <div class="DF">DF {{ datos.Stats[2] }}</div>
+      <div class="ATKSP">ATKSP {{ datos.Stats[3] }}</div>
+      <div class="DefSP">DefSP {{ datos.Stats[4] }}</div>
+      <div class="Speed">Speed {{ datos.Stats[5] }}</div>
       <div class="Altura"> Height {{ datos.Altura/10 }}m</div>
-      <div class="Peso"> Weight {{ datos.Peso /10 }}kg</div>
-
+      <div class="Peso"> Weight {{ datos.Peso /10 }}kg</div>   
     </div>
-
+    
+    
     <div class="Tabla">
       <div class="SuperDebil"><span>Super Weak to:</span> {{ datos.Tabla.SuperDebil.join(',') }}</div>
       <div class="Debil"><span>Weak to:</span> {{ datos.Tabla.Debil.join(',') }}</div>
@@ -601,7 +515,7 @@ Start();
       <div class="Resistente"><span>Strong against to:</span> {{ datos.Tabla.Resistente.join(',') }}</div>
       <div class="SuperResistente"><span>Super Strong against to:</span> {{ datos.Tabla.Superresistente.join(',') }}</div>
       <div class="Inmune"><span>Inmmune to:</span> {{ datos.Tabla.Inmune.join(',') }}</div>
-    </div>
+    </div> 
 
   </div>
   
@@ -610,23 +524,25 @@ Start();
 <style scoped>
 .Card
 {
-  margin-top: 4vh;
-  /*background-color: yellow;*/
-  padding: 1em;
+  margin-top: 4em;
+  /* background-color: yellow; */
   display: flex;
-  flex-direction: column;
   align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 .NombrePokemon
 {
   /*background-color: rgb(198, 244, 178);*/
+  margin-top: 1em;
   font-size: x-large;
   font-weight: 600;
   text-transform: capitalize;
 }
 .SpritePokemon
 {
-  background-color: brown;
+  background-color:  rgb(231, 15, 15);
   width: 9em;
   height: 9em;
   margin: 1em;
@@ -634,6 +550,18 @@ Start();
   display: flex;
   align-items: center;
   justify-content: center;
+}
+/*Clases*/
+.Sprite
+{
+  image-rendering: pixelated;
+  object-fit:contain;
+  width: 4em;
+}
+.Sprite2
+{
+  width: 4em;
+  width: 100%;
 }
 .Tipos
 {
@@ -653,43 +581,6 @@ Start();
 
 }
 /********************************************************************************* */
-.CadenaEvolutiva
-{
-  background-color: rgba(21, 0, 255, 0.762);
-  padding: 10px;
-  width:30em;
-}
-
-/********************************************************************************* */
-.Descripcion
-{
-  background-color: chocolate;
-  width: 30em;
-  margin: 1em;
-}
-.Tabla
-{
-  background-color: rgb(215, 236, 26);
-  width: 30em;
-}
-.SuperDebil{ background-color: red;}
-.Debil{background-color: orange;}
-.DNormal{background-color: gray;}
-.Resistente{background-color: aquamarine;}
-.SuperResistente{background-color: green;}
-.Inmune{background-color: rgb(165, 160, 160);}
-/*Clases*/
-.Sprite
-{
-  image-rendering: pixelated;
-  object-fit:contain;
-  width: 4em;
-}
-.Sprite2
-{
-  width: 4em;
-  width: 100%;
-}
 /*Tipos*/
 .Acero
 {
@@ -738,6 +629,8 @@ Start();
 .Planta
 {
   background-color: darkgreen;
+  color: white;
+  font-weight: 600;
 }
 .Psiquico
 {
@@ -758,9 +651,133 @@ Start();
 .Veneno
 {
   background-color: violet;
+  font-weight: 600;
 }
 .Volador
 {
   background-color: lightblue;
 }
+/********************************************************************************* */
+.CadenaEvolutiva
+{
+  background-color: wheat;
+  margin-top: 1em;
+  width: 90%;
+  display: flex;
+}
+/********************************************************************************* */
+.Descripcion
+{
+  background-color: wheat;
+  width: 90%;
+  padding: 1em;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+}
+.Texto
+{
+  background-color: chocolate;
+  text-align: justify;
+  margin-bottom: 1em;
+}
+.PS
+{
+  background-color:lightgreen;
+}
+.ATK
+{
+  background-color:lightblue;
+}
+.DF
+{
+  background-color: lightcoral;
+}
+.ATKSP
+{
+  background-color: lightcyan;
+}
+.DefSP
+{
+  background-color:lightgoldenrodyellow;
+}
+.Speed
+{
+  background-color: lightgray;
+}
+.Altura
+{
+  background-color:lightpink;
+}
+.Peso
+{
+ background-color: lightsalmon;
+}
+
+.Tabla
+{
+  background-color: wheat;
+  width: 90%;
+  padding: 1em;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.SuperDebil
+{ 
+  background-color: red;
+  font-size: medium;
+  font-weight: 600;
+  text-transform: capitalize;
+  overflow-y: auto; 
+  word-break:break-all;
+}
+.Debil
+{
+  background-color: orange;
+  font-size: medium;
+  font-weight: 600;
+  text-transform: capitalize;
+  overflow-y: auto; 
+  word-break:break-all;
+}
+.DNormal
+{
+  background-color: gray;
+  font-size: medium;
+  font-weight: 600;
+  text-transform: capitalize;
+  overflow-y: auto; 
+  word-break:break-all;
+}
+.Resistente
+{
+  background-color: aquamarine;
+  font-size: medium;
+  font-weight: 600;
+  text-transform: capitalize;
+  overflow-y: auto; 
+  word-break:break-all;
+}
+.SuperResistente
+{
+  background-color: green;
+  font-size: medium;
+  font-weight: 600;
+  text-transform: capitalize;
+  overflow-y: auto; 
+  word-break:break-all;
+}
+.Inmune
+{
+  background-color: rgb(165, 160, 160);
+  font-size: medium;
+  font-weight: 600;
+  text-transform: capitalize;
+  overflow-y: auto; 
+  word-break:break-all;
+}
+
+
 </style>

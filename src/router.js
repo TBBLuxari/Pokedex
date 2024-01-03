@@ -6,8 +6,8 @@ import MissingNo from './views/MissingNo.vue'
 const routes = 
 [
   {path: '/Pokedex', name: 'Home', component: Home, },
-  {path: '/Search/:pokemon?', name: 'Search',component: Busqueda, },
-  {path: '/MissingNo', name: 'MissingNo',component: MissingNo, }
+  {path: '/Pokedex/Search/:pokemon?', name: 'Search',component: Busqueda, },
+  {path: '/Pokedex/MissingNo', name: 'MissingNo',component: MissingNo, }
 ];
 
 const router = createRouter({

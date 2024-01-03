@@ -50,18 +50,9 @@ function Busqueda(nombre)
 
 <template>
     <Navbar :Titulo="pokemon" :Ir="irAHome" :Busqueda="Busqueda"/>
-    <div class="contenedor">
-      <InformacionPokemon :pokemonName="pokemon" :key="pokemon"></InformacionPokemon>
-    </div>
+    <InformacionPokemon :pokemonName="pokemon" :key="pokemon"></InformacionPokemon>
 </template>
 
 <style scoped>
-.contenedor
-{
-  /*background-color: blue;*/
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
+
 </style>
