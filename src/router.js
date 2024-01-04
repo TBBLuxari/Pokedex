@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import Home from './views/Home.vue'
 import Busqueda from './views/Busqueda.vue';
 import MissingNo from './views/MissingNo.vue'
@@ -11,8 +11,7 @@ const routes =
 ];
 
 const router = createRouter({
-  mode:'hash',
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
 });
 
