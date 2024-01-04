@@ -43,6 +43,7 @@ function Busqueda(nombre)
 }
 
 </script>
+
 <template>
     <Navbar :Titulo="titulo" :Ir="irAHome" :Busqueda="Busqueda"/>
     <div class="contenedor">
