@@ -40,6 +40,37 @@ const exceptions = [
   "iron-leaves"
   ];
 
+
+  const exceptions2 = {
+  wormadam: "wormadam-plant",
+  giratina: "giratina-altered",
+  shaymin: "shaymin-land",
+  basculin: "basculin-red-striped",
+  darmanitan: "darmanitan-standard",
+  tornadus: "tornadus-incarnate",
+  thundurus: "thundurus-incarnate",
+  landorus: "landorus-incarnate",
+  keldeo: "keldeo-ordinary",
+  meloetta: "meloetta-aria",
+  meowstic: "meowstic-male",
+  aegislash: "aegislash-shield",
+  pumpkaboo: "pumpkaboo-average",
+  gourgeist: "gourgeist-average",
+  oricorio: "oricorio-baile",
+  lyncanroc: "lyncanroc-midday",
+  wishiwashi: "wishiwashi-solo",
+  minior: "minior-red-meteor",
+  mimikyu: "mimikyu-disguised",
+  toxtricity: "toxtricity-amped",
+  eiscue: "eiscue-ice",
+  indeedee: "indeedee-male",
+  morpeko: "morpeko-full-belly",
+  urshifu: "urshifu-single-strike",
+  basculegion: "basculegion-male",
+  enamorus: "enamorus-incarnate"
+};
+
+
 function CortarGuion(name) 
 {
   if (exceptions.includes(name)) 
@@ -54,7 +85,15 @@ function CortarGuion(name)
 
 const buscarPokemon = () => 
 {
-  props.Busqueda(inputValue.value);
+
+  if(exceptions2[inputValue.value])
+  {
+    props.Busqueda(exceptions2[inputValue.value])
+  }else
+  {
+    props.Busqueda(inputValue.value);
+  }
+
   inputValue.value = '';
 };
 </script>

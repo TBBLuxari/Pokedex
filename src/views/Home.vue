@@ -15,6 +15,8 @@ let imagenCargada = ref(false);
 let numeroDePokemones = 1010;
 let titulo="Home";
 
+
+
 function irAHome(){router.push({ name: 'Home' });};
 function determinarClase(id){return id < 650 ? 'sprite' : 'sprite-2';}
 function ponerNombre(id){return names[id].charAt(0).toUpperCase()+names[id].slice(1);}
@@ -68,6 +70,7 @@ function TraerDatos()
 }
 
 TraerDatos();
+
 
 
 
