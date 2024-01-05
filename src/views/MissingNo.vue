@@ -55,6 +55,7 @@ function Busqueda(nombre)
 <style scoped>
 .contenedor
 {
+    margin-top: 3.8em;
     display: flex;
     justify-content: center;
     flex-direction: column;
