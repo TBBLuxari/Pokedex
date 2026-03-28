@@ -12,7 +12,7 @@ let names = ref([""]);
 let namesArray;
 
 let imagenCargada = ref(false);
-let numeroDePokemones = 1010;
+let numeroDePokemones = 1025;
 let titulo="Home";
 
 
