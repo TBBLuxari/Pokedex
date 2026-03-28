@@ -1,10 +1,33 @@
-# Vue 3 + Vite
+# ⚡ Vue 3 Pokédex
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+![Pikachu](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png)
 
-## Recommended IDE Setup
+Una aplicación web interactiva diseñada para explorar el mundo Pokémon, construida para poner en práctica el consumo de APIs RESTful y el desarrollo de interfaces modernas.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## 🚀 Demo en Vivo
+¡Explora la Pokédex aquí!: **[Ver la aplicación en GitHub Pages](https://tbbluxari.github.io/Pokedex/#/)**
 
+## 🛠️ Tecnologías Utilizadas
 
-https://tbbluxari.github.io/Pokedex/#/
+* **Frontend:** Vue 3 + Vite
+* **Datos:** [PokéAPI](https://pokeapi.co/)
+* **Lenguaje:** JavaScript / HTML / CSS
+
+## 💡 Sobre el Proyecto
+
+Este proyecto nació inicialmente como una práctica para dominar los fundamentos de **Vue 3** y entender a fondo cómo realizar peticiones asíncronas a una API externa. Actualmente sirve como una demostración de cómo transformar una idea sencilla en una interfaz limpia y funcional.
+
+## ⚙️ Instalación Local
+
+Si quieres correr el proyecto en tu máquina local:
+
+1. Clona este repositorio:
+   ```bash
+   git clone [https://github.com/TBBLuxari/Pokedex.git](https://github.com/TBBLuxari/Pokedex.git)
+
+2. Instala las dependencias:
+   ```bash
+   npm install
+3. Levanta el servidor de desarrollo:
+   ```bash
+   npm run dev
