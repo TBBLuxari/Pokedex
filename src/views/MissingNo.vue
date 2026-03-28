@@ -1,7 +1,7 @@
 <script setup>
 import Navbar from '../components/Navbar.vue'
 import { useRouter} from 'vue-router'
-import sprite from '../assets/MissingNo.png'
+import sprite from '../assets/MissingNO.png'
 
 const router = useRouter(); //Router
 const titulo="MissigNo";
